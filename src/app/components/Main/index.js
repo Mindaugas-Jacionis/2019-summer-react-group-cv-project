@@ -1,19 +1,19 @@
 import React from 'react';
+import InfoContainer from '../InfoContainer';
 import './index.scss';
 
 function Main() {
   return (
     <main className="Main">
       <section className="Main--section">
-        <div className="Main--section-profile Main--section-container">
-          <h4>Profile</h4>
+        <InfoContainer title="Profile" className="Main--section-profile">
           <p>
             Chupa chups caramels chocolate bar muffin candy bear claw. Carrot cake sweet roll oat
             cake dragée fruitcake cookie macaroon powder. Chocolate sesame snaps caramels pastry.
             Candy canes pie carrot cake brownie cake cupcake sweet. Marshmallow candy canes danish
             caramels muffin sesame snaps donut.
           </p>
-        </div>
+        </InfoContainer>
         <div className="Main--section-contacts Main--section-container">
           <h4>Contacts</h4>
           <ul>
