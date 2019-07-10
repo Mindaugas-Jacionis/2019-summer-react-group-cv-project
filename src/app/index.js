@@ -1,16 +1,12 @@
 import React from 'react';
-import pictureOfMe from './person.jpg';
-import './index.css';
+import { Header, Main } from './components';
+import './index.scss';
 
 function App() {
   return (
-    <div>
-      <header className="Header">
-        <div className="Header--image">
-          <img src={pictureOfMe} alt="My headshot" />
-        </div>
-      </header>
-      <main>Main</main>
+    <div className="App">
+      <Header />
+      <Main />
     </div>
   );
 }
