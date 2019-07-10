@@ -7,7 +7,7 @@ function InfoContainer({ children, title, className }) {
 
   return (
     <div className={classes}>
-      <Title level="4">{title}</Title>
+      {title && <Title level="4">{title}</Title>}
       {children}
     </div>
   );

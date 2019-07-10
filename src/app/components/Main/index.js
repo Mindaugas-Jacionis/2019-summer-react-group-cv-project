@@ -14,8 +14,7 @@ function Main() {
             caramels muffin sesame snaps donut.
           </p>
         </InfoContainer>
-        <div className="Main--section-contacts Main--section-container">
-          <h4>Contacts</h4>
+        <InfoContainer title="Contacts" className="Main--section-contacts">
           <ul>
             <li>
               <label>Address</label>
@@ -50,9 +49,8 @@ function Main() {
               </a>
             </li>
           </ul>
-        </div>
-        <div className="Main--section-skills Main--section-container">
-          <h4>Skills</h4>
+        </InfoContainer>
+        <InfoContainer title="Skills" className="Main--section-skills">
           <ul>
             <li>
               <span>Sleeping</span>
@@ -75,11 +73,10 @@ function Main() {
               <span>Beginner</span>
             </li>
           </ul>
-        </div>
+        </InfoContainer>
       </section>
       <section className="Main--section">
-        <div className="Main--section-education Main--section-container">
-          <h4>Education</h4>
+        <InfoContainer title="Education" className="Main--section-education">
           <ul>
             <li>
               <p>Hogwarts School of Witchcraft and Wizardry - 2013</p>
@@ -94,9 +91,8 @@ function Main() {
               <p>Shake Shake Shake</p>
             </li>
           </ul>
-        </div>
-        <div className="Main--section-experience Main--section-container">
-          <h4>Work Experience</h4>
+        </InfoContainer>
+        <InfoContainer title="Work Experience" className="Main--section-experience">
           <ul>
             <li>
               <p>UAB Twitter • 2019.01 - Present</p>
@@ -111,7 +107,7 @@ function Main() {
               <p>Web Tracking Guru</p>
             </li>
           </ul>
-        </div>
+        </InfoContainer>
       </section>
     </main>
   );
