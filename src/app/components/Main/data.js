@@ -29,4 +29,51 @@ const contacts = {
   ],
 };
 
-export { profile, contacts };
+const skills = {
+  title: 'Skills',
+  content: [
+    [{ tag: 'span', children: 'Sleeping' }, { tag: 'span', children: 'Advanced' }],
+    [{ tag: 'span', children: 'Eating' }, { tag: 'span', children: 'Intermediate' }],
+    [{ tag: 'span', children: 'Running' }, { tag: 'span', children: 'Beginner' }],
+    [{ tag: 'span', children: 'Driving' }, { tag: 'span', children: 'Advanced' }],
+    [{ tag: 'span', children: 'Working' }, { tag: 'span', children: 'Beginner' }],
+  ],
+};
+
+const education = {
+  title: 'Education',
+  content: [
+    [
+      { tag: 'p', children: 'Hogwarts School of Witchcraft and Wizardry - 2013' },
+      { tag: 'p', children: 'Defense Against Dark Arts' },
+    ],
+    [
+      { tag: 'p', children: 'Code Academy, Vilnius - 2019' },
+      { tag: 'p', children: 'FrontEnd Engineering' },
+    ],
+    [
+      { tag: 'p', children: 'Disco Dance School 3000 - 2019' },
+      { tag: 'p', children: 'Shake Shake Shake' },
+    ],
+  ],
+};
+
+const experience = {
+  title: 'Work Experience',
+  content: [
+    [
+      { tag: 'p', children: 'UAB Twitter • 2019.01 - Present' },
+      { tag: 'p', children: 'FrontEnd Rockstar' },
+    ],
+    [
+      { tag: 'p', children: 'Uber Eats • 2017.01 - 2019.01' },
+      { tag: 'p', children: 'Eating mySQL DBs' },
+    ],
+    [
+      { tag: 'p', children: 'UAB Adform • 2016.01 - 2017.01' },
+      { tag: 'p', children: 'Web Tracking Guru' },
+    ],
+  ],
+};
+
+export { profile, contacts, skills, education, experience };
