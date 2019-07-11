@@ -1,54 +1,34 @@
 import React from 'react';
 import InfoContainer from '../InfoContainer';
+import { profile, contacts } from './data';
 import './index.scss';
+
+function LisItem({ label, text, href, target = '_self' }, index) {
+  const props = target === '_blank' ? { target, rel: 'noopener noreferrer' } : { target };
+
+  return (
+    <li key={index}>
+      <label>{label}</label>
+      {href ? (
+        <a href={href} {...props}>
+          {text}
+        </a>
+      ) : (
+        <span>{text}</span>
+      )}
+    </li>
+  );
+}
 
 function Main() {
   return (
     <main className="Main">
       <section className="Main--section">
-        <InfoContainer title="Profile" className="Main--section-profile">
-          <p>
-            Chupa chups caramels chocolate bar muffin candy bear claw. Carrot cake sweet roll oat
-            cake dragée fruitcake cookie macaroon powder. Chocolate sesame snaps caramels pastry.
-            Candy canes pie carrot cake brownie cake cupcake sweet. Marshmallow candy canes danish
-            caramels muffin sesame snaps donut.
-          </p>
+        <InfoContainer title={profile.title} className="Main--section-profile">
+          <p>{profile.text}</p>
         </InfoContainer>
         <InfoContainer title="Contacts" className="Main--section-contacts">
-          <ul>
-            <li>
-              <label>Address</label>
-              <span>Rainbow st. 96, New Sidney</span>
-            </li>
-            <li>
-              <label>Phone</label>
-              <a href="tel:+440999999999">+440999999999</a>
-            </li>
-            <li>
-              <label>Email</label>
-              <a href="mailto:test@dummy.com?subject=Hello from Web">test@dummy.com</a>
-            </li>
-            <li>
-              <label>GitHub</label>
-              <a
-                href="https://github.com/mindaugas-jacionis/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Mindaugas-Jacionis
-              </a>
-            </li>
-            <li>
-              <label>Linkedin</label>
-              <a
-                href="https://www.linkedin.com/in/mindaugas-jačionis-b866ab57"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Mindaugas Jačionis
-              </a>
-            </li>
-          </ul>
+          <ul>{contacts.content.map(LisItem)}</ul>
         </InfoContainer>
         <InfoContainer title="Skills" className="Main--section-skills">
           <ul>
