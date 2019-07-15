@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Title from '../Title';
 import './index.scss';
 
@@ -12,5 +13,10 @@ function InfoContainer({ children, title, className }) {
     </div>
   );
 }
+
+InfoContainer.propTypes = {
+  title: PropTypes.string,
+  className: PropTypes.string,
+};
 
 export default InfoContainer;

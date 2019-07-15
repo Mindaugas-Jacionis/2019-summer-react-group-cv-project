@@ -1,36 +1,23 @@
 import React from 'react';
 import InfoContainer from '../InfoContainer';
-import { profile, contacts, skills, education, experience } from './data';
+import content from './data';
 import './index.scss';
 
 function Item(data, index) {
   return (
     <li key={index}>
-      {data.map(({ tag: Tag, ...props }, contentIndex) => {
+      {data.map(({ tag: Tag, ...rest }, contentIndex) => {
+        const props = rest.target === '_blank' ? { ...rest, rel: 'noopener noreferrer' } : rest;
+
         return <Tag key={contentIndex} {...props} />;
       })}
     </li>
   );
 }
 
-function LisItem({ label, text, href, target = '_self' }, index) {
-  const props = target === '_blank' ? { target, rel: 'noopener noreferrer' } : { target };
+function Main({ language }) {
+  const { profile, contacts, skills, education, experience } = content[language];
 
-  return (
-    <li key={index}>
-      <label>{label}</label>
-      {href ? (
-        <a href={href} {...props}>
-          {text}
-        </a>
-      ) : (
-        <span>{text}</span>
-      )}
-    </li>
-  );
-}
-
-function Main() {
   return (
     <main className="Main">
       <section className="Main--section">
@@ -38,7 +25,7 @@ function Main() {
           <p>{profile.text}</p>
         </InfoContainer>
         <InfoContainer title={contacts.title} className="Main--section-contacts">
-          <ul>{contacts.content.map(LisItem)}</ul>
+          <ul>{contacts.content.map(Item)}</ul>
         </InfoContainer>
         <InfoContainer title={skills.title} className="Main--section-skills">
           <ul>{skills.content.map(Item)}</ul>
