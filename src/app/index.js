@@ -4,20 +4,44 @@ import './index.scss';
 
 const LANGUAGES = [{ name: 'English', code: 'en' }, { name: 'Japanese', code: 'jp' }];
 
-function App() {
-  const [language, setLanguage] = React.useState(LANGUAGES[0].code);
-  const items = LANGUAGES.map(({ name, code }) => ({ children: name, value: code }));
-  const onChange = e => {
-    setLanguage(e.target.value);
+class App extends React.Component {
+  state = {
+    language: LANGUAGES[0].code,
   };
 
-  return (
-    <div className="App">
-      <Header />
-      <DropDown items={items} onChange={onChange} />
-      <Main language={language} />
-    </div>
-  );
+  onChange = e => {
+    this.setState({ language: e.target.value });
+  };
+
+  render() {
+    console.log('render');
+    const { language } = this.state;
+    const items = LANGUAGES.map(({ name, code }) => ({ children: name, value: code }));
+
+    return (
+      <div className="App">
+        <Header />
+        <DropDown items={items} onChange={this.onChange} />
+        <Main language={language} />
+      </div>
+    );
+  }
 }
+
+// function App() {
+//   const [language, setLanguage] = React.useState(LANGUAGES[0].code);
+//   const items = LANGUAGES.map(({ name, code }) => ({ children: name, value: code }));
+//   const onChange = e => {
+//     setLanguage(e.target.value);
+//   };
+
+//   return (
+//     <div className="App">
+//       <Header />
+//       <DropDown items={items} onChange={onChange} />
+//       <Main language={language} />
+//     </div>
+//   );
+// }
 
 export default App;
